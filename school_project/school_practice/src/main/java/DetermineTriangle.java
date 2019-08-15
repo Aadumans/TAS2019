@@ -13,14 +13,9 @@ public class DetermineTriangle {
      */
 
     public static String triangleExists(int sideA, int sideB, int sideC) {
-        if ((sideA <= 0) | (sideB <= 0) | (sideC <= 0)) {
-            return "No";
-        } else if ((sideA == sideB) & (sideB == sideC) & (sideC == sideA)) {
-            return "Yes";
-        } else if ((sideA < sideB + sideC) | (sideB < sideA + sideC) | (sideC < sideB + sideA)) {
-            return "No";
-        } else {
+        if ((sideA > 0 && sideB > 0 && sideC > 0) && ((sideA < sideB + sideC) && (sideB < sideA + sideC) && (sideC < sideB + sideA))) {
             return "Yes";
         }
+        return "No";
     }
 }

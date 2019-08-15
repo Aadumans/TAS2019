@@ -13,8 +13,19 @@ public class DetermineTriangleTest {
     @Test
     public void determinIsTriangleReal() {
 
-        //Equilateral triangle
         assertEquals("Yes", DetermineTriangle.triangleExists(1, 1, 1));
+
+        assertEquals("Yes", DetermineTriangle.triangleExists(3, 4, 5));
+        assertEquals("Yes", DetermineTriangle.triangleExists(3, 5, 4));
+
+
+        assertEquals("Yes", DetermineTriangle.triangleExists(4, 5, 3));
+        assertEquals("Yes", DetermineTriangle.triangleExists(4, 3, 5));
+
+
+        assertEquals("Yes", DetermineTriangle.triangleExists(5, 4, 3));
+        assertEquals("Yes", DetermineTriangle.triangleExists(5, 3, 4));
+
 
         assertEquals("No", DetermineTriangle.triangleExists(3, 1, 1));
         assertEquals("No", DetermineTriangle.triangleExists(1, 3, 1));
