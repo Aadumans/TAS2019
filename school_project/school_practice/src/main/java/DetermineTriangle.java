@@ -13,7 +13,7 @@ public class DetermineTriangle {
      */
 
     public static String triangleExists(int sideA, int sideB, int sideC) {
-        if ((sideA > 0 && sideB > 0 && sideC > 0) && ((sideA < sideB + sideC) && (sideB < sideA + sideC) && (sideC < sideB + sideA))) {
+        if ((sideA < sideB + sideC) && (sideB < sideA + sideC) && (sideC < sideB + sideA)) {
             return "Yes";
         }
         return "No";

@@ -41,5 +41,7 @@ public class DetermineTriangleTest {
 
         assertEquals("No", DetermineTriangle.triangleExists(0, 0, 0));
 
+        assertEquals("No", DetermineTriangle.triangleExists(-1, -1, -3));
+
     }
 }
