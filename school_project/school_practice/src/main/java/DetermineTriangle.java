@@ -19,6 +19,8 @@ public class DetermineTriangle {
             return "Yes";
         } else if ((sideA < sideB + sideC) | (sideB < sideA + sideC) | (sideC < sideB + sideA)) {
             return "No";
-        } else return "Yes";
+        } else {
+            return "Yes";
+        }
     }
 }
