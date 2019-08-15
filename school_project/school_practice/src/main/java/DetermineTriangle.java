@@ -4,7 +4,7 @@
  * Copyright Andris Adumans Riga, Latvia. All rights reserved.
  */
 
-public class DetermineTriangle extends Helpers {
+public class DetermineTriangle {
 
     /**
      * Given three natural numbers A, B, C. Determine if a triangle with these sides can exist.
