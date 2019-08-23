@@ -1,0 +1,19 @@
+/*
+ * @(#)Practice99.java
+ *
+ * Copyright  Andris Adumans Riga, Latvia. All rights reserved.
+ */
+
+public class Practice99 {
+
+
+    public static void main(String[] args) {
+        for (int i = 0; i< args.length; i++){
+            System.out.println(i);
+            System.out.println(args[i]);
+        }
+    }
+
+
+
+}
