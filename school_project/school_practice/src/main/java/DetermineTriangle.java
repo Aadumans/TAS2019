@@ -1,12 +1,10 @@
 /*
- * @(#)DeterminTriangle.java
+ * @(#)DetermineTriangle.java
  *
  * Copyright Andris Adumans Riga, Latvia. All rights reserved.
  */
 
-import java.util.Scanner;
-
-public class DeterminTriangle extends Helpers {
+public class DetermineTriangle {
 
     /**
      * Given three natural numbers A, B, C. Determine if a triangle with these sides can exist.
@@ -15,11 +13,9 @@ public class DeterminTriangle extends Helpers {
      */
 
     public static String triangleExists(int sideA, int sideB, int sideC) {
-
-        if (sideA < 0 || sideB < 0 || sideC < 0) {
-            return "No";
-        } else {
+        if ((sideA < sideB + sideC) && (sideB < sideA + sideC) && (sideC < sideB + sideA)) {
             return "Yes";
         }
+        return "No";
     }
 }
