@@ -1,4 +1,4 @@
-public class Main {
+public class Main2 {
 
     public static int getNumberOfMaxParam(int a, int b, int c) {
         if (a >= b && a >= c) {
