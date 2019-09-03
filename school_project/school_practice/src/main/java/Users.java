@@ -7,12 +7,19 @@
 public class Users {
 
     private int id;
+
     private String name;
+
     private String username;
+
     private String email;
-    private Object adress;
+
+    private Object address;
+
     private String phone;
+
     private String website;
+
     private Company company;
 
     public int getId() {
@@ -47,12 +54,12 @@ public class Users {
         this.email = email;
     }
 
-    public Object getAdress() {
-        return adress;
+    public Object getAddress() {
+        return address;
     }
 
-    public void setAdress(Object adress) {
-        this.adress = adress;
+    public void setAddress(Object address) {
+        this.address = address;
     }
 
     public String getPhone() {
@@ -69,5 +76,13 @@ public class Users {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

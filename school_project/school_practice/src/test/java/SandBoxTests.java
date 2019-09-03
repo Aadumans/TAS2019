@@ -5,7 +5,9 @@
  */
 
 import static io.restassured.RestAssured.given;
-import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.util.Arrays;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -40,7 +42,30 @@ public class SandBoxTests {
                 .statusCode(200)
                 .extract().as(Users[].class);
 
-        assertEquals("Hoba", users[2].getName());
+        Posts[] posts  = given()
+                .spec(spec)
+                .when()
+                .get("posts")
+                .then()
+                .statusCode(200)
+                .extract().as(Posts[].class);
+
+        assertTrue(Arrays.stream(posts).anyMatch(p -> p.getBody().startsWith("odio fugit voluptatum ducimus earum autem est incidunt")));
+        assertTrue(Arrays.stream(users).anyMatch(u -> u.getName().equals("Chelsey Dietrich")));
+
+        //        assertEquals(UsersId,PostId);
+
+        //        int i =1;
+        //        for (Posts post : posts){
+        //            i = i +1;
+        //            System.out.println(i);
+        //            System.out.println(post.getBody());
+        //        }
+
+
+
+
+
 
     }
 }
