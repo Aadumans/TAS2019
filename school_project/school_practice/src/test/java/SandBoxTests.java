@@ -5,6 +5,7 @@
  */
 
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -33,39 +34,42 @@ public class SandBoxTests {
     }
 
     @Test
-    public void simpleBackEndTest(){
-        Users[] users  = given()
+    public void simpleBackEndTest() {
+        User[] users = given()
                 .spec(spec)
                 .when()
                 .get("users")
                 .then()
                 .statusCode(200)
-                .extract().as(Users[].class);
+                .extract().as(User[].class);
 
-        Posts[] posts  = given()
+        Post[] posts = given()
                 .spec(spec)
                 .when()
                 .get("posts")
                 .then()
                 .statusCode(200)
-                .extract().as(Posts[].class);
+                .extract().as(Post[].class);
 
         assertTrue(Arrays.stream(posts).anyMatch(p -> p.getBody().startsWith("odio fugit voluptatum ducimus earum autem est incidunt")));
         assertTrue(Arrays.stream(users).anyMatch(u -> u.getName().equals("Chelsey Dietrich")));
 
-        //        assertEquals(UsersId,PostId);
+        Integer userId = 0;
 
-        //        int i =1;
-        //        for (Posts post : posts){
-        //            i = i +1;
-        //            System.out.println(i);
-        //            System.out.println(post.getBody());
-        //        }
+        for (int i = 0; i < posts.length; i++) {
+            if (posts[i].getBody().startsWith("odio fugit voluptatum ducimus earum autem est incidunt")) {
+                userId = posts[i].getUserId();
+            }
+        }
 
+        String userName = null;
 
+        for (int i = 0; i < users.length; i++) {
+            if (userId.equals(users[i].getId())) {
+                userName = users[i].getName();
+            }
+        }
 
-
-
-
+        assertEquals("Chelsey Dietrich", userName);
     }
 }

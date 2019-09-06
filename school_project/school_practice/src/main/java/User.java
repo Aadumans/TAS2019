@@ -1,10 +1,10 @@
 /*
- * @(#)Users.java
+ * @(#)User.java
  *
  * Copyright  Andris Adumans Riga, Latvia. All rights reserved.
  */
 
-public class Users {
+public class User {
 
     private int id;
 

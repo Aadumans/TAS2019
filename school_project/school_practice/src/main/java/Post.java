@@ -1,10 +1,10 @@
 /*
- * @(#)Posts.java
+ * @(#)Post.java
  *
  * Copyright  Andris Adumans Riga, Latvia. All rights reserved.
  */
 
-public class Posts {
+public class Post {
 
     private int userId;
 
